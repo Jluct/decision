@@ -11,4 +11,5 @@ class EventStorage
   public:
     void addEvent(Event *event);
     void getEvent(unsigned int number, Event *event);
+    int getCount();
 };

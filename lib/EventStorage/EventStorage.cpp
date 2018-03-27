@@ -17,3 +17,8 @@ void EventStorage::getEvent(unsigned int number, Event *event)
     event = this->events[number];
   }
 };
+
+int EventStorage::getCount()
+{
+  return this->countEvents;
+};
