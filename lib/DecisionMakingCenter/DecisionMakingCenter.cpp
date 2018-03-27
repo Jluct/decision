@@ -1,9 +1,12 @@
 #include "DecisionMakingCenter.h"
+#include "ServiceContainer.h"
 
-DecisionMakingCenter::DecisionMakingCenter(EventStorage *eventStorage){
-    this->eventStorage = eventStorage;
+DecisionMakingCenter::DecisionMakingCenter(ServiceContainer *container)
+{
+    this->container = container;
 };
 
-EventStorage *DecisionMakingCenter::getEventStorage(){
-    return this->eventStorage;
+EventStorage *DecisionMakingCenter::getEventStorage()
+{
+    return this->container->eventStorage;
 };

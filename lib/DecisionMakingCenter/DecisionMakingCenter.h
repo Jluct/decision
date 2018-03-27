@@ -1,13 +1,14 @@
 #pragma once
 
 #include "EventStorage.h"
+#include "ServiceContainer.h"
 
 class DecisionMakingCenter
 {
   private:
-    EventStorage *eventStorage;
+    ServiceContainer *container;
 
   public:
-    DecisionMakingCenter(EventStorage *eventStorage);
+    DecisionMakingCenter(ServiceContainer *container);
     EventStorage *getEventStorage();
 };

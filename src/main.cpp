@@ -1,11 +1,18 @@
 #include <Arduino.h>
 #include "DecisionMakingCenter.h"
+#include "ServiceContainer.h"
 
 EventStorage eventStorage;
-DecisionMakingCenter dmc(&eventStorage);
+
+int servoControlPins[] = {9, 10};
+Platform platform(servoControlPins);
+ServiceContainer container = {&eventStorage, &platform};
+
+DecisionMakingCenter dmc(&container);
 
 // EVENTS
 struct Event isLight = {"isLight", false};
+struct Event isDark = {"isDark", false};
 
 void setup()
 {
@@ -13,6 +20,7 @@ void setup()
     Serial.println("SETUP");
 
     dmc.getEventStorage()->addEvent(&isLight);
+    dmc.getEventStorage()->addEvent(&isDark);
 }
 
 void loop()
