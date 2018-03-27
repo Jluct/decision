@@ -10,12 +10,15 @@ void EventStorage::addEvent(Event *event)
   this->countEvents++;
 };
 
-void EventStorage::getEvent(unsigned int number, Event *event)
+bool EventStorage::getEvent(unsigned int number, Event *event)
 {
   if (number < this->countEvents)
   {
     event = this->events[number];
+    return true;
   }
+
+  return false;
 };
 
 int EventStorage::getCount()
