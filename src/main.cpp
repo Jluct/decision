@@ -1,9 +1,22 @@
 #include <Arduino.h>
+#include "DecisionMakingCenter.h"
 
-void setup() {
-    // put your setup code here, to run once:
+EventStorage eventStorage;
+DecisionMakingCenter dmc(&eventStorage);
+
+// EVENTS
+struct Event isLight = {"isLight", false};
+
+void setup()
+{
+    Serial.begin(9600);
+    Serial.println("SETUP");
+
+    dmc.getEventStorage()->addEvent(&isLight);
 }
 
-void loop() {
-    // put your main code here, to run repeatedly:
+void loop()
+{
+    Serial.println("LOOP");
+    delay(1000);
 }
