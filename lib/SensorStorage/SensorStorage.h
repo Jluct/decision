@@ -10,5 +10,5 @@ class SensorStorage
 
   public:
     void addSensor(Sensor *sensor);
-    bool getSensor(int number);
-}
+    bool getSensor(int number, Sensor *sensor);
+};

@@ -2,9 +2,14 @@
 
 #include "EventStorage.h"
 #include "Platform.h"
+#include "SensorStorage.h"
+#include "StateContainer.h"
 
-typedef struct
+class ServiceContainer
 {
+  public:
     EventStorage *eventStorage;
     Platform *platform;
-} ServiceContainer;
+    SensorStorage *sensorStorage;
+    StateContainer *stateContainer;
+};

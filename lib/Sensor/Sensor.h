@@ -9,10 +9,9 @@ class Sensor
     bool force = false;
     int lastCall = 0;
     int validTime = 100;
-    ServiceContainer *container;
-    int (*call)(ServiceContainer *container);
+    int (*call)();
 
   public:
-    Sensor(int (*call)(ServiceContainer *container));
+    Sensor(int (*call)());
     int getData(bool force = false);
 };

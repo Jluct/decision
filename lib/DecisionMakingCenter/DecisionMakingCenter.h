@@ -10,5 +10,4 @@ class DecisionMakingCenter
 
   public:
     DecisionMakingCenter(ServiceContainer *container);
-    EventStorage *getEventStorage();
 };
