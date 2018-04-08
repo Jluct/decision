@@ -2,16 +2,18 @@
 #include "ServiceContainer.h"
 #include "EventGenerator.h"
 #include "DecisionMakingCenter.h"
+#include "SensorStorage.h"
 
 EventStorage eventStorage;
+SensorStorage sensorStorage;
+
 int servoControlPins[] = {9, 10};
 Platform platform(servoControlPins);
-SensorStorage sensorStorage;
 StateContainer stateContainer;
-ServiceContainer container = {&eventStorage, &platform, &sensorStorage, &stateContainer};
+ServiceContainer container = {&platform, &stateContainer};
 
 DecisionMakingCenter dmc(&container);
-EventGenerator eventGenerator(&container);
+EventGenerator eventGenerator(&container, &eventStorage);
 
 // EVENTS
 struct Event isLight = {"isLight", false};

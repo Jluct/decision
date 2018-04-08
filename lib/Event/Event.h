@@ -1,6 +1,6 @@
 #pragma once
 
-struct Event{
+struct Event {
     char name[12];
     bool state;
 };

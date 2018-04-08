@@ -1,7 +1,7 @@
 #include "Sensor.h"
 #include "ServiceContainer.h"
 
-Sensor::Sensor(int (*call)(ServiceContainer *container))
+Sensor::Sensor(int (*call)())
 {
     this->call = call;
 };
@@ -15,5 +15,5 @@ int Sensor::getData(bool force = false)
     }
     this->lastCall = currentTime;
 
-    return this->data = this->call(); 
+    return this->data = this->call();
 };
