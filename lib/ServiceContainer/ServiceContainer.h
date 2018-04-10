@@ -1,7 +1,8 @@
 #pragma once
 
-#include "Platform.h"
+#include "..\Platform\Platform.h"
 #include "StateContainer.h"
+#include "SensorStorage.h"
 
 class ServiceContainer
 {
@@ -9,4 +10,5 @@ class ServiceContainer
 
     Platform *platform;
     StateContainer *stateContainer;
+    SensorStorage *sensorsContainer;
 };

@@ -4,6 +4,8 @@
 #include "DecisionMakingCenter.h"
 #include "SensorStorage.h"
 
+#include "Analyzers/LightSensor/LightSensor.h"
+
 EventStorage eventStorage;
 SensorStorage sensorStorage;
 
@@ -19,10 +21,13 @@ EventGenerator eventGenerator(&container, &eventStorage);
 struct Event isLight = {"isLight", false};
 struct Event isDark = {"isDark", false};
 
+Sensor lightSensor(&LightSensor);
+
 void setup()
 {
     Serial.begin(9600);
     Serial.println("SETUP");
+    sensorStorage.addSensor(&lightSensor);
 }
 
 void loop()

@@ -1,4 +1,4 @@
-#pragma once
+// #pragma once
 
 #include "SensorStorage.h"
 #include "Sensor.h"
@@ -11,7 +11,8 @@ void SensorStorage::addSensor(Sensor *sensor)
     this->countSensors++;
 };
 
-bool SensorStorage::getSensor(int number, Sensor *sensor){
+bool SensorStorage::getSensor(unsigned int number, Sensor *sensor)
+{
     if (number < this->countSensors)
     {
         sensor = this->sensors[number];

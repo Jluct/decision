@@ -6,7 +6,6 @@ class Sensor
 {
   private:
     int data;
-    bool force = false;
     int lastCall = 0;
     int validTime = 100;
     int (*call)();
